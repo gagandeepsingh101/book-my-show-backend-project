@@ -3,9 +3,11 @@ import mongoose from "mongoose";
 const bookSchema = mongoose.Schema({
 	movie: {
 		type: mongoose.Schema.Types.String,
+		required: true
 	},
 	slot: {
 		type: mongoose.Schema.Types.String,
+		required: true
 	},
 	seats: {
 		A1: {

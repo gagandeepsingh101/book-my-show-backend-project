@@ -18,7 +18,7 @@ export const getLastBookingRecord = async function (req, res) {
 
 		res.status(200).json({
 			success: true,
-			data: fetchlastBooking,
+			previousBookingData: fetchlastBooking,
 			message: "Fetched last booking successfully",
 		});
 	} catch (error) {
