@@ -9,8 +9,9 @@ export const useFetchLastBooking = async (setLastBookingShow) => {
 	try {
 		// Fetch data from the server
 		const response = await axios.get(
-			`http://localhost:${
-				process.env.REACT_APP_SERVER_PORT || 8080
+			`${
+				process.env.REACT_APP_SERVER_URI ||
+				`http://localhost:${process.env.PORT || 8080}`
 			}/api/booking`
 		);
 

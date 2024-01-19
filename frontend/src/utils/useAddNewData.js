@@ -13,10 +13,11 @@ export const useAddNewData = async (bookingData, setLastBookingShow) => {
 		// Check if required fields are not empty and at least one seat is selected
 		if (movie && slot && Object.values(seats).some((count) => count > 0)) {
 			const response = await axios.post(
-				process.env.REACT_APP_SERVER_URI ||
-					`http://localhost:${
-						process.env.REACT_APP_SERVER_PORT || 8080
-					}/api/booking`,
+				`${
+					process.env.REACT_APP_SERVER_URI ||
+					`http://localhost:${process.env.PORT || 8080}`
+				}/api/booking`,
+
 				{ ...bookingData },
 				{ headers: { "Content-Type": "application/json" } }
 			);
